@@ -21,3 +21,5 @@ mkdir -p $opencv_build_dir/include
 
 cp -r $opencv_src_dir/include $opencv_build_dir/
 cp -r $opencv_src_dir/modules $opencv_build_dir/
+mkdir $opencv_build_dir/contrib
+cp -r $opencv_contrib_dir $opencv_build_dir/contrib
