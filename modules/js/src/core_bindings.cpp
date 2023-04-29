@@ -97,6 +97,10 @@ using namespace cv::dnn;
 using namespace aruco;
 #endif
 
+#ifdef HAVE_OPENCV_ALPHAMAT
+using namespace alphamat;
+#endif
+
 #ifdef HAVE_OPENCV_VIDEO
 typedef TrackerMIL::Params TrackerMIL_Params;
 #endif
