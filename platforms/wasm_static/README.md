@@ -28,3 +28,11 @@ using namespace alphamat;
 #endif
 
 ```
+
+To build native alphamat with test program
+```
+cmake -DOPENCV_EXTRA_MODULES_PATH=~/Dev/opencv_contrib/modules -DWITH_EIGEN=ON -DEIGEN_INCLUDE_PATH=~/Dev/eigen-3.4.0 -DBUILD_EXAMPLES=ON -DBUILD_TESTS=ON ../opencv
+
+cmake --build . --config Release --target example_alphamat_information_flow_matting
+
+```

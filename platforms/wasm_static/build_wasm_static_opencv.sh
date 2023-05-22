@@ -16,7 +16,7 @@ echo Installing OpenCV from $opencv_src_dir to $opencv_build_dir
 export EMSCRIPTEN=$emscripten_dir/upstream/emscripten
 #Threads
 #python $opencv_src_dir/platforms/js/build_js.py $opencv_build_dir --build_wasm --threads --emscripten_dir=$emscripten_dir/upstream/emscripten/ --config=$opencv_src_dir/platforms/js/opencv_js.config.py
-python $opencv_src_dir/platforms/js/build_js.py $opencv_build_dir --build_wasm --emscripten_dir=$emscripten_dir/upstream/emscripten/ --config=$opencv_src_dir/platforms/js/opencv_js.config.py --cmake_option="-DOPENCV_EXTRA_MODULES_PATH=$opencv_contrib_dir" --cmake_option="-DWITH_EIGEN=ON" --cmake_option="-DEIGEN_INCLUDE_PATH=$eigen_dir"
+python $opencv_src_dir/platforms/js/build_js.py $opencv_build_dir --build_wasm --emscripten_dir=$emscripten_dir/upstream/emscripten/ --config=$opencv_src_dir/platforms/js/opencv_js.config.py --cmake_option="-DOPENCV_EXTRA_MODULES_PATH=$opencv_contrib_dir" --cmake_option="-DWITH_EIGEN=ON" --cmake_option="-DEIGEN_INCLUDE_PATH=$eigen_dir" --cmake_option="-DCMAKE_BUILD_TYPE=Debug"
 
 #Copy header files to build_dir
 mkdir -p $opencv_build_dir/include
