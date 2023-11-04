@@ -1,3 +1,11 @@
+# Building OpenCV as a static WASM library
+Source emscripten and run the attached shell script 
+```bash
+build_wasm_static_opencv.sh <target_directory> <optional_dir_for_opencv_contrib> <optional_dir_for_eigen_lib>
+```
+# Notes on using alphamat from OpenCV contrib repo
+The following flags are set automatically if an opencv_contrib directory is included as an arg for the build script.
+
 Building contrib modules required setting flags on python build script
 
 ```
@@ -7,6 +15,7 @@ Building contrib modules required setting flags on python build script
 Eigen flags are used for alphamat
 See ./build_wasm_static_opencv.sh
 
+## Generating WASM binding for alphamat
 However, alphamat is not included in the opencv output for js by default. Following the instructions here, 
 https://github.com/ganwenyao/opencv_js
 
@@ -29,6 +38,7 @@ using namespace alphamat;
 
 ```
 
+# Building alphamat as native app for testing
 To build native alphamat with test program
 ```
 cmake -DOPENCV_EXTRA_MODULES_PATH=~/Dev/opencv_contrib/modules -DWITH_EIGEN=ON -DEIGEN_INCLUDE_PATH=~/Dev/eigen-3.4.0 -DBUILD_EXAMPLES=ON -DBUILD_TESTS=ON ../opencv
